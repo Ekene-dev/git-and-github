@@ -1,0 +1,12 @@
+p {
+  animation: p 500ms infinite alternate-reverse;
+}
+@keyframes p {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(16px);
+  }
+}
