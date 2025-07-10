@@ -1,12 +1,108 @@
-p {
-  animation: p 500ms infinite alternate-reverse;
+:root {
+  --primary-color: #4a90e2;
+  --primary-hover: #357abd;
+  --background-color: #f0f2f5;
+  --container-bg: #ffffff;
+  --text-color: #333333;
+  --error-color: #e74c3c;
+  --border-color: #d1d5db;
+  --input-bg: #fafafa;
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-@keyframes p {
-  0% {
-    transform: translateY(0);
-  }
 
-  100% {
-    transform: translateY(16px);
-  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--text-color);
+}
+
+.login-container {
+  background-color: var(--container-bg);
+  padding: 40px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  letter-spacing: 0.03em;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0 18px 0;
+  border: 1.8px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
+
+button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+#errorMsg,
+#signupMessage,
+#loginMessage {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: var(--error-color);
+  min-height: 18px; /* to avoid layout shift */
+}
+
+p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+p a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
 }

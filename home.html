@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Welcome to the E-commerce Home Page</h1>
+    <p>You are now logged in.</p>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+      const user = localStorage.getItem("loggedInUser");
+
+      if (!user) {
+        // Not logged in
+        window.location.href = "login.html";
+      }
+
+      function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>
